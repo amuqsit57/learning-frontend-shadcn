@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import { Button } from '@/components/ui/button'
 export default function Hero(){
     return(
     <>
@@ -20,8 +21,7 @@ export default function Hero(){
             text-start 
             w-full
             ">
-              <button className='bg-foreground text-background px-4 py-2 rounded-2xl'>Shop Now</button>
-
+             <Button>Shop Now</Button>
             </div>
             
           </div>

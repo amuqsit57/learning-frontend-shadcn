@@ -78,8 +78,8 @@ const Related = () => {
             </div>
         </div>
         <div className="w-full flex justify-center mt-4">
-            <button className='bg-foreground rounded-md text-background p-2 '>Shop All Products</button>
-            <Button></Button>
+            {/* <button className='bg-foreground rounded-md text-background p-2 '>Shop All Products</button> */}
+            <Button>Shop All Products</Button>
 
         </div>
     </div>

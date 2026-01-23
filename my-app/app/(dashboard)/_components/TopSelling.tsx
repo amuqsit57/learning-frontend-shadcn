@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import React from 'react'
 import { BiStar } from 'react-icons/bi'
@@ -102,7 +103,8 @@ const TopSelling = () => {
                 </div>
              
             </div>
-            <button className='bg-foreground rounded-md text-background p-2 '>Shop All Products</button>
+            {/* <button className='bg-foreground rounded-md text-background p-2 '>Shop All Products</button> */}
+            <Button>Shop All Products</Button>
         </div>
     </section>
   )
