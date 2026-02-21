@@ -70,8 +70,8 @@
   --primary: oklch(44.226% 0.00005 271.152);
   --primary-foreground: oklch(100% 0.00011 271.152);
 
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(27.274% 0.00003 271.152);
+  --secondary-foreground: oklch(100% 0.00011 271.152);
 
   /* UI */
   --card: oklch(0.205 0 0);

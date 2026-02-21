@@ -1,8 +1,30 @@
 import React from 'react'
-import { BiStar } from 'react-icons/bi'
-import Image from 'next/image'
-import { BsStarFill } from 'react-icons/bs'
 import { Button } from '@/components/ui/button'
+import ProductItem from './ProductItem'
+
+const products = [
+  {
+    src: '/assets/shirt1.png',
+    alt: 'Product 1',
+    title: 'Women Ethnic',
+    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, odio.',
+    rating: 5,
+  },
+  {
+    src: '/assets/shirt2.png',
+    alt: 'Product 2',
+    title: 'Women Ethnic',
+    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, odio.',
+    rating: 5,
+  },
+  {
+    src: '/assets/shirt1.png',
+    alt: 'Product 3',
+    title: 'Women Ethnic',
+    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, odio.',
+    rating: 5,
+  },
+]
 
 const Related = () => {
   return (
@@ -12,70 +34,16 @@ const Related = () => {
         <h2 className='text-2xl font-bold text-foreground'>Top Selling Products</h2>
         <p className='text-xs text-gray-400'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor quo at doloremque sed itaque aliquid. Voluptas numquam vel magni fugit.</p>
         <div className=' w-full px-20 mt-4 mb-4 flex justify-evenly items-center'>
-            {/* Product Item */}
-            
-            <div className='bg-background rounded-lg shadow-md text-start justify-center flex flex-col items-center shadow-2xl m-2 p-2'>
-               <Image src='/assets/shirt1.png' alt='Product 1' width={150} height={350} className='mb-4 w-[150px] h-[180px] rounded-lg ' />
-                 <div className="
-                 flex flex-col items-center mr-8
-                 ">
-                    <div className="
-                    flex flex-row items-center align-center mb-2
-                    ">
-                        <BsStarFill className='text-amber-300'/>
-                        <BsStarFill className='text-amber-300'/>
-                        <BsStarFill className='text-amber-300'/>
-                        <BsStarFill className='text-amber-300'/>
-                        <BsStarFill className='text-amber-300'/>
-                    </div>
-                    <h3 className=' text-lg font-semibold text-foreground'>Women Ethnic</h3>
-                     <p className='text-zinc-400 text-xs text-center'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, odio.</p>
-                    
-                     
-                 </div>
-            </div>
-          
-              <div className='bg-background rounded-lg shadow-md text-start justify-center flex flex-col items-center shadow-2xl m-2 p-2'>
-               <Image src='/assets/shirt2.png' alt='Product 1' width={150} height={350} className='mb-4 w-[150px] h-[180px] rounded-lg ' />
-                 <div className="
-                 flex flex-col items-center mr-8
-                 ">
-                    <div className="
-                    flex flex-row items-center align-center mb-2
-                    ">
-                        <BsStarFill className='text-amber-300'/>
-                        <BsStarFill className='text-amber-300'/>
-                        <BsStarFill className='text-amber-300'/>
-                        <BsStarFill className='text-amber-300'/>
-                        <BsStarFill className='text-amber-300'/>
-                    </div>
-                    <h3 className=' text-lg font-semibold text-foreground'>Women Ethnic</h3>
-                     <p className='text-zinc-400 text-xs text-center'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, odio.</p>
-                    
-                     
-                 </div>
-            </div>
-
-              <div className='bg-background rounded-lg shadow-md text-start justify-center flex flex-col items-center shadow-2xl m-2 p-2'>
-               <Image src='/assets/shirt1.png' alt='Product 1' width={150} height={350} className='mb-4 w-[150px] h-[180px] rounded-lg ' />
-                 <div className="
-                 flex flex-col items-center mr-8
-                 ">
-                    <div className="
-                    flex flex-row items-center align-center mb-2
-                    ">
-                        <BsStarFill className='text-amber-300'/>
-                        <BsStarFill className='text-amber-300'/>
-                        <BsStarFill className='text-amber-300'/>
-                        <BsStarFill className='text-amber-300'/>
-                        <BsStarFill className='text-amber-300'/>
-                    </div>
-                    <h3 className=' text-lg font-semibold text-foreground'>Women Ethnic</h3>
-                     <p className='text-zinc-400 text-xs text-center'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, odio.</p>
-                    
-                     
-                 </div>
-            </div>
+            {products.map((item, idx) => (
+              <ProductItem
+                key={idx}
+                src={item.src}
+                alt={item.alt}
+                title={item.title}
+                description={item.description}
+                rating={item.rating}
+              />
+            ))}
         </div>
         <div className="w-full flex justify-center mt-4">
             {/* <button className='bg-foreground rounded-md text-background p-2 '>Shop All Products</button> */}

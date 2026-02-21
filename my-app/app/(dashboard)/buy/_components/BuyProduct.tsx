@@ -18,7 +18,7 @@ const BuyProduct = () => {
         >
           <path d="M6 2a2 2 0 0 0-2 2v2h16V4a2 2 0 0 0-2-2H6zm0 6v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8H6z" />
         </svg>
-        ADD TO BAG
+        Buy  $150
       </button>
     </div>
   );
