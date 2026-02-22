@@ -7,9 +7,14 @@ interface Params {
   id: string
 }
 
-export default function Page({ params }: { params: Params }) {
-  const product: Product | undefined = getProductById(params.id)
+export default async function Page({ params }: { params: Params }) {
+  // unwrap params since it's a promise in this context
+  const { id } = await params as Params
 
+  const product: Product | undefined = getProductById(id)
+
+  // debug id if needed
+  // console.log('Product ID:', id)
   if (!product) {
     notFound()
   }
