@@ -8,7 +8,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import Link from 'next/dist/client/link'
+import Link from 'next/link'
 import Dropdown from './Dropdown'
 
 
@@ -18,17 +18,17 @@ const Navigation = () => {
         <NavigationMenu>
             <NavigationMenuItem className='list-none'>
               <NavigationMenuLink asChild >
-                <Link href="/docs">Offers</Link>
+                <Link href="/products">Offers</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem className='list-none'>
               <NavigationMenuLink asChild >
-                <Link href="/docs">Trending</Link>
+                <Link href="/products">Trending</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem className='list-none'>
               <NavigationMenuLink asChild >
-                <Link href="/docs">Most Selling</Link>
+                <Link href="/products">Most Selling</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem className='list-none'>
