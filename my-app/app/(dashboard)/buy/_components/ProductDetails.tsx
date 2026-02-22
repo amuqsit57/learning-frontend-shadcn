@@ -3,10 +3,20 @@ import SizeSelect from './SizeSelect'
 import AddToCart from './AddToCart'
 import BuyProduct from './BuyProduct'
 
-const ProductDetails = () => {
+interface ProductDetailsProps {
+  product: {
+    title?: string
+    price?: number
+  }
+}
+
+const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   return (
     <div className='flex flex-col items-start justify-evenly gap-3 h-100'>
-        <h1 className='text-4xl font-bold '>Men Full Sleave Shirt</h1>
+        <h1 className='text-4xl font-bold '>{product.title || 'Product'}</h1>
+        {product.price !== undefined && (
+          <p className="text-2xl font-semibold text-primary">${product.price.toFixed(2)}</p>
+        )}
        
        <div className="flex flex-col justify-between gap-8">
          <SizeSelect/> 
@@ -14,7 +24,7 @@ const ProductDetails = () => {
         <div className="flex justify-center items-center gap-4">
 
             <AddToCart/>
-            <BuyProduct/>
+            <BuyProduct price={product.price} />
         </div>
       </div>
     </div>  

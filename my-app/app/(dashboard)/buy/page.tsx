@@ -1,13 +1,5 @@
-import React from 'react'
-import OrderWrapper from './_components/OrderWrapper'
+import { redirect } from 'next/navigation'
 
-
-const page = () => {
-  return (
-    <div>
-      <OrderWrapper/>
-    </div>
-  )
+export default function page() {
+  redirect('/products')
 }
-
-export default page

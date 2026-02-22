@@ -3,45 +3,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import ProductItem from './_components/Product'
-
-interface Product {
-  src: string
-  alt?: string
-  title: string
-  description: string
-  price: number
-  rating?: number
-}
-
-
-const products: Product[] = [
-  {
-    src: '/assets/shirt1.png',
-    alt: 'Shirt 1',
-    title: 'Women Ethnic',
-    description: 'Comfortable and stylish ethnic wear for women.',
-    price: 49.99,
-    rating: 5,
-
-  },
-  {
-    src: '/assets/shirt2.png',
-    alt: 'Shirt 2',
-    title: 'Men Casual',
-    description: 'Casual shirts for everyday wear.',
-    price: 29.99,
-    rating: 4,
-  },
-  {
-    src: '/assets/shirt3.png',
-    alt: 'Shirt 3',
-    title: 'Kids Fun Tee',
-    description: 'Bright tees for active kids.',
-    price: 19.99,
-    rating: 3,
-  },
-  // add more sample items if desired
-]
+import { products } from '@/lib/products'
 
 const page = () => {
   const [search, setSearch] = useState('')
@@ -82,7 +44,7 @@ const page = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {filtered.map((item, idx) => (
-          <Link href="/buy" key={idx}>
+          <Link href={`/buy/${idx}`} key={idx}>
             <ProductItem
               src={item.src}
               alt={item.alt}

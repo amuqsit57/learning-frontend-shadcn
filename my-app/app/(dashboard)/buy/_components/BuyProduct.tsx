@@ -1,6 +1,10 @@
 import React from "react";
 
-const BuyProduct = () => {
+interface BuyProductProps {
+  price?: number
+}
+
+const BuyProduct: React.FC<BuyProductProps> = ({ price }) => {
   return (
     <div>
       <button
@@ -18,7 +22,7 @@ const BuyProduct = () => {
         >
           <path d="M6 2a2 2 0 0 0-2 2v2h16V4a2 2 0 0 0-2-2H6zm0 6v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8H6z" />
         </svg>
-        Buy  $150
+        Buy{price !== undefined && ` $${price.toFixed(2)}`}
       </button>
     </div>
   );
