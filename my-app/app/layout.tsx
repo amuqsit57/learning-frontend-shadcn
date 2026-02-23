@@ -5,7 +5,6 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "next-themes";
 import Nav from "@/components/layout/Nav";
-import { CartProvider } from "@/lib/cart";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -32,13 +31,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {/* cart provider makes the cart available to all pages including the header */}
-          <CartProvider>
-            <Header />
-            <Nav />
-            <main>{children}</main>
-            <Footer />
-          </CartProvider>
+          <Header />
+          <Nav />
+          <main>{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

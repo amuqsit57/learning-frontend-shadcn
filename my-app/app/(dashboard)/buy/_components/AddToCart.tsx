@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Product } from "@/lib/products";
-import { useCart } from "@/lib/cart";
+import { useCart } from "@/stores/cart";
 
 interface AddToCartProps {
   product: Product;

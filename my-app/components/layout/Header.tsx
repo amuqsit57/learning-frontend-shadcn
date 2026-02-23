@@ -3,7 +3,7 @@ import Image from "next/image";
 import { BiSearch } from "react-icons/bi";
 import { CiShoppingCart } from "react-icons/ci";
 import Link from "next/link";
-import { useCart } from "@/lib/cart";
+import { useCart } from "@/stores/cart";
 import  ThemeToggle from "../theme/ThemeToggle";
 
 export default function Header(){

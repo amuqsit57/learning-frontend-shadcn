@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import { useCart } from "@/lib/cart";
+import { useCart, CartItem } from "@/stores/cart";
 
 const CartPage: React.FC = () => {
   const { cart, removeItem, clearCart } = useCart();
 
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const total = cart.reduce<number>((sum:any, item:any) => sum + item.price * item.quantity, 0);
 
   return (
     <section className="p-8">
@@ -14,7 +14,7 @@ const CartPage: React.FC = () => {
         <p className="text-gray-500">Your cart is empty.</p>
       ) : (
         <div className="space-y-4">
-          {cart.map((item, idx) => (
+          {cart.map((item: CartItem, idx: number) => (
             <div
               key={idx}
               className="flex justify-between items-center border p-4 rounded"
