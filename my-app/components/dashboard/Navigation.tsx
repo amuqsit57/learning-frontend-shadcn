@@ -36,6 +36,11 @@ const Navigation = () => {
                 <Dropdown/>
               </NavigationMenuLink>
             </NavigationMenuItem>
+            <NavigationMenuItem className='list-none'>
+              <NavigationMenuLink asChild>
+                <Link href="/cart">Cart</Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
         </NavigationMenu>
     </div>
   )

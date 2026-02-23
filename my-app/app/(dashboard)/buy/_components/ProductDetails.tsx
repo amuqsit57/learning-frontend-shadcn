@@ -2,12 +2,10 @@ import React from 'react'
 import SizeSelect from './SizeSelect'
 import AddToCart from './AddToCart'
 import BuyProduct from './BuyProduct'
+import { Product } from '@/lib/products'
 
 interface ProductDetailsProps {
-  product: {
-    title?: string
-    price?: number
-  }
+  product: Product
 }
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
@@ -23,7 +21,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
        
         <div className="flex justify-center items-center gap-4">
 
-            <AddToCart/>
+            <AddToCart product={product} />
             <BuyProduct price={product.price} />
         </div>
       </div>

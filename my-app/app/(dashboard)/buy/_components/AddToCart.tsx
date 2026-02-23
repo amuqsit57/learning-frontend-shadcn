@@ -1,11 +1,28 @@
+"use client";
 import React from "react";
+import { Product } from "@/lib/products";
+import { useCart } from "@/lib/cart";
 
-const AddToCart = () => {
+interface AddToCartProps {
+  product: Product;
+}
+
+const AddToCart: React.FC<AddToCartProps> = ({ product }) => {
+  const { addItem } = useCart();
+  const [added, setAdded] = React.useState(false);
+
+  const handleClick = () => {
+    addItem(product);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1500);
+  };
+
   return (
-    <div>
+    <div className="relative">
       <button
         type="button"
         aria-label="Add to bag"
+        onClick={handleClick}
         className="inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-full shadow-md uppercase tracking-wider"
       >
         {/* simple shopping bag icon */}
@@ -20,6 +37,11 @@ const AddToCart = () => {
         </svg>
         ADD TO BAG
       </button>
+      {added && (
+        <span className="absolute top-0 right-0 mt-1 mr-1 bg-green-500 text-white text-xs px-2 py-0.5 rounded">
+          Added
+        </span>
+      )}
     </div>
   );
 };

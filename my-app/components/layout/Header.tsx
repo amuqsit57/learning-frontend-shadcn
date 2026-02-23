@@ -1,9 +1,14 @@
+"use client";
 import Image from "next/image";
 import { BiSearch } from "react-icons/bi";
 import { CiShoppingCart } from "react-icons/ci";
+import Link from "next/link";
+import { useCart } from "@/lib/cart";
 import  ThemeToggle from "../theme/ThemeToggle";
 
 export default function Header(){
+    const { cart } = useCart();
+
     return(
         <>
         <header>
@@ -26,11 +31,17 @@ export default function Header(){
                             <BiSearch 
                             />
                         </div>
-                    <div className=" p-2 rounded-full bg-background">
-                              <CiShoppingCart 
-                            className="w-5 h-5 text-foreground"
-                            />
-                      
+                    <div className="relative p-2 rounded-full bg-background">
+                              <Link href="/cart">
+                                <CiShoppingCart 
+                                  className="w-5 h-5 text-foreground"
+                                />
+                              </Link>
+                              {cart.length > 0 && (
+                                <span className="absolute top-0 right-0 inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full">
+                                  {cart.length}
+                                </span>
+                              )}
                         </div>
                         <ThemeToggle/>
 
